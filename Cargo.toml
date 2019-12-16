@@ -12,8 +12,14 @@ members = [
     "plugin-common"
 ]
 
+[features]
+default = ["rt-tokio"]
+rt-tokio = ["tokio"]
+rt-async-std = ["async-std"]
+
+
 [dependencies]
 libloading = "0.5"
-tokio =  { version = "0.2", features = ["full"] }
-async-std = { version = "1.3", features = ["attributes"] }
+tokio =  { version = "0.2", features = ["full"], optional = true }
+async-std = { version = "1.3", features = ["attributes"], optional = true }
 plugin-common = {path = "./plugin-common"}

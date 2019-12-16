@@ -14,7 +14,7 @@ async fn main() {
 }
 
 async fn main_test() {
-    let libname = "/Users/gary/tmp/rust/debug/libasync_plugin.dylib";
+    let libname = "./target/debug/libasync_plugin.dylib";
     let library = Library::new(libname).unwrap();
     let decl = unsafe {
         library

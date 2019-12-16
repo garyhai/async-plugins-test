@@ -1,0 +1,9 @@
+[package]
+name = "plugin-common"
+version = "0.1.0"
+authors = ["Gary Hai <gary@neunit.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

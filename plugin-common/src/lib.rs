@@ -2,8 +2,12 @@ use std::{
     future::Future,
     pin::Pin,
 };
+use tokio::runtime::Handle;
 
-pub type FnRegMethod = extern "Rust" fn() -> Pin<Box<dyn Future<Output = usize> + Send + Sync>>;
+pub type TlsGet = extern "Rust" fn() -> usize;
+
+pub type FnRegMethod = extern "Rust" fn(Handle, TlsGet) -> Pin<Box<dyn Future<Output = usize> + Send + Sync>>;
+
 
 #[derive(Copy, Clone)]
 pub struct LibDeclaration {
